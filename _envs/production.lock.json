@@ -15,7 +15,7 @@
     }
   },
   "fulfillment-service": {
-    "recordedAt": "2026-07-13T08:19:09Z",
+    "recordedAt": "2026-07-13T08:19:53Z",
     "recordedBy": "tieulong",
     "consumes": {
       "inventory-service/inventory.get-stock": "sha256:7c8a5c1385dc7b2f9ed703467b4c259d40ae77fb071a0f0778de84841f652dd1"
