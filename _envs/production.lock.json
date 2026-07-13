@@ -50,7 +50,7 @@
     }
   },
   "web-app": {
-    "recordedAt": "2026-07-13T08:19:07Z",
+    "recordedAt": "2026-07-13T08:19:51Z",
     "recordedBy": "tieulong",
     "consumes": {
       "order-service/orders.get-order": "sha256:18d484b2487e2793431cece0ab22dcd665096fd4837f6af7cb2ab56877f123fe"
