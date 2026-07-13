@@ -22,7 +22,7 @@
     }
   },
   "inventory-service": {
-    "recordedAt": "2026-07-13T08:19:03Z",
+    "recordedAt": "2026-07-13T08:19:47Z",
     "recordedBy": "tieulong",
     "provides": {
       "inventory.get-stock": "sha256:4f4289810d138db174f915a2be25731750a0f7789c19e584930ea2e63f128f27"
