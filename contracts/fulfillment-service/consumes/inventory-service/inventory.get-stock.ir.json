@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "availableUnits": {
+      "type": "integer",
+      "x-ct-scalar": "int32"
+    },
+    "backorderable": {
+      "type": "boolean",
+      "x-ct-scalar": "bool"
+    },
+    "sku": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "warehouse": {
+      "properties": {
+        "code": {
+          "type": "string",
+          "x-ct-scalar": "string"
+        }
+      },
+      "required": [
+        "code"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "availableUnits",
+    "backorderable",
+    "sku",
+    "warehouse"
+  ],
+  "type": "object"
+}

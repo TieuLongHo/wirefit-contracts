@@ -1,0 +1,9 @@
+service: fulfillment-service
+schema-version: 1
+consumes:
+  - id: inventory.get-stock
+    provider: inventory-service
+    dto: com.acme.fulfillment.StockDecision
+extractors:
+  - match: "*"
+    command: "wirefit-java --classpath .wirefit-demo/fulfillment-service:.wirefit-demo/jakarta.annotation-api-3.0.0.jar"
