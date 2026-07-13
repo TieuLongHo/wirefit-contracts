@@ -1,0 +1,11 @@
+service: notification-service
+schema-version: 1
+consumes:
+  # Subscribes to billing-service's invoice-created event. Its declared usage is
+  # the InvoiceEmail interface — the fields it reads to send the receipt email.
+  - id: billing.invoice-created
+    provider: billing-service
+    dto: src/InvoiceEmail.ts#InvoiceEmail
+extractors:
+  - match: ".ts"
+    command: wirefit-ts

@@ -1,0 +1,27 @@
+{
+  "properties": {
+    "amountCents": {
+      "type": "number",
+      "x-ct-scalar": "float64"
+    },
+    "currency": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "customerEmail": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "invoiceId": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "amountCents",
+    "currency",
+    "customerEmail",
+    "invoiceId"
+  ],
+  "type": "object"
+}
