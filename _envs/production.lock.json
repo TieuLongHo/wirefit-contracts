@@ -62,5 +62,12 @@
     "consumes": {
       "order-service/orders.get-order": "sha256:2b0b70f0c9039265f655d734be2808f8ca2f4a4d003785ab05d05cb993ca2689"
     }
+  },
+  "web-store": {
+    "recordedAt": "2026-07-13T08:19:16Z",
+    "recordedBy": "tieulong",
+    "consumes": {
+      "inventory-service/inventory.get-stock": "sha256:0669cb66fd891ca2c7c7e01320687b8da2a3d1453aaaabfec639960038101cc2"
+    }
   }
 }
