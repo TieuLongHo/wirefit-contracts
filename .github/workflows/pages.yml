@@ -23,6 +23,9 @@ jobs:
     environment:
       name: github-pages
     steps:
+      # the action installs wirefit via `go install`; runners don't have GOPATH/bin
+      # on PATH, and the composite action doesn't add it (upstream TODO)
+      - run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - uses: Wirefit/wirefit/actions/pages@master
         with:
           contracts-repo: TieuLongHo/wirefit-contracts
