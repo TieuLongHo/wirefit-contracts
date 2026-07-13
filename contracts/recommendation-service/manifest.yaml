@@ -1,0 +1,10 @@
+service: recommendation-service
+schema-version: 1
+provides:
+  - id: recommendations.for-order
+    kind: rest
+    direction: response
+    dto: src/recommendations/models.py#RecommendationsResponse
+extractors:
+  - match: ".py"
+    command: wirefit-py

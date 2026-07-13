@@ -1,0 +1,67 @@
+{
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "x-ct-scalar": "datetime"
+    },
+    "items": {
+      "items": {
+        "properties": {
+          "price_cents": {
+            "type": "integer",
+            "x-ct-scalar": "int64"
+          },
+          "reason": {
+            "type": "string",
+            "x-ct-nullable": true,
+            "x-ct-scalar": "string"
+          },
+          "score": {
+            "type": "number",
+            "x-ct-scalar": "float64"
+          },
+          "sku": {
+            "type": "string",
+            "x-ct-scalar": "string"
+          },
+          "title": {
+            "type": "string",
+            "x-ct-scalar": "string"
+          }
+        },
+        "required": [
+          "price_cents",
+          "score",
+          "sku",
+          "title"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "model_version": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "strategy": {
+      "enum": [
+        "frequently_bought",
+        "reorder",
+        "similar_items"
+      ],
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "generated_at",
+    "model_version",
+    "order_id",
+    "strategy"
+  ],
+  "type": "object"
+}
