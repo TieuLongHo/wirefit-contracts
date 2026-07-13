@@ -1,4 +1,11 @@
 {
+  "analytics-service": {
+    "recordedAt": "2026-07-13T08:19:18Z",
+    "recordedBy": "tieulong",
+    "consumes": {
+      "billing-service/billing.invoice-created": "sha256:a42a8d9521b42b098b9ba239ee84e9efe654c58099507c9800dfc3fa2f5ee7e5"
+    }
+  },
   "billing-service": {
     "recordedAt": "2026-07-13T08:19:01Z",
     "recordedBy": "tieulong",
