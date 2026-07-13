@@ -1,0 +1,13 @@
+service: order-service
+schema-version: 1
+provides:
+  - id: orders.get-order
+    kind: rest
+    direction: response
+    dto: com.acme.orders.OrderResponse
+extractors:
+  # Java FQNs have no file suffix: "*" is the fallback route. The demo scripts
+  # symlink .wirefit-demo/order-service at the compiled classes; a real service
+  # would let wirefit-java resolve its classpath (--build-tool maven|gradle).
+  - match: "*"
+    command: "wirefit-java --classpath .wirefit-demo/order-service:.wirefit-demo/jakarta.annotation-api-3.0.0.jar"
