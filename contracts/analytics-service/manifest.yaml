@@ -1,0 +1,9 @@
+service: analytics-service
+schema-version: 1
+consumes:
+  - id: billing.invoice-created
+    provider: billing-service
+    dto: src/events.py#InvoiceAnalyticsEvent
+extractors:
+  - match: ".py"
+    command: wirefit-py
