@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "amountCents": {
+      "type": "integer",
+      "x-ct-scalar": "int64"
+    },
+    "createdAt": {
+      "type": "string",
+      "x-ct-scalar": "datetime"
+    },
+    "currency": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "customerEmail": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "invoiceId": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "orderId": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "ISSUED",
+        "PAID",
+        "VOID"
+      ],
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "amountCents",
+    "createdAt",
+    "currency",
+    "customerEmail",
+    "invoiceId",
+    "orderId",
+    "status"
+  ],
+  "type": "object"
+}

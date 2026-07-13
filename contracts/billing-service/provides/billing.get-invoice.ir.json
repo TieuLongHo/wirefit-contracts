@@ -1,0 +1,68 @@
+{
+  "properties": {
+    "amount_cents": {
+      "type": "integer",
+      "x-ct-scalar": "int64"
+    },
+    "currency": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "customer_email": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "invoice_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "lines": {
+      "items": {
+        "properties": {
+          "description": {
+            "type": "string",
+            "x-ct-scalar": "string"
+          },
+          "lineTotalCents": {
+            "type": "integer",
+            "x-ct-scalar": "int64"
+          }
+        },
+        "required": [
+          "description",
+          "lineTotalCents"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "purchase_order": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "ISSUED",
+        "PAID",
+        "VOID"
+      ],
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "amount_cents",
+    "currency",
+    "customer_email",
+    "invoice_id",
+    "lines",
+    "order_id",
+    "status"
+  ],
+  "type": "object"
+}

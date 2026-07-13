@@ -1,0 +1,20 @@
+service: billing-service
+schema-version: 1
+provides:
+  # REST response, extracted from a Java DTO (like order-service).
+  - id: billing.get-invoice
+    kind: rest
+    direction: response
+    dto: com.acme.billing.InvoiceResponse
+  # Asynchronous event, sourced DIRECTLY from its Avro schema (schema-native,
+  # SPEC §10 / F8). No code is extracted — the .avsc IS the contract.
+  - id: billing.invoice-created
+    kind: event
+    direction: event
+    schema: events/invoice-created.avsc
+extractors:
+  # Java FQNs have no file suffix: "*" is the fallback route. The demo scripts
+  # symlink .wirefit-demo/billing-service at the compiled classes; a real
+  # service would let wirefit-java resolve its classpath (--build-tool maven).
+  - match: "*"
+    command: "wirefit-java --classpath .wirefit-demo/billing-service:.wirefit-demo/jakarta.annotation-api-3.0.0.jar"
