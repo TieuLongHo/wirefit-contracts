@@ -27,5 +27,12 @@
     "provides": {
       "recommendations.for-order": "sha256:7457c2961018aa3bbf388bf81c6a0236a3da2fe228accbb6dfd021557b4f2493"
     }
+  },
+  "web-app": {
+    "recordedAt": "2026-07-13T08:19:07Z",
+    "recordedBy": "tieulong",
+    "consumes": {
+      "order-service/orders.get-order": "sha256:18d484b2487e2793431cece0ab22dcd665096fd4837f6af7cb2ab56877f123fe"
+    }
   }
 }
