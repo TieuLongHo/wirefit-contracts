@@ -7,7 +7,7 @@
     }
   },
   "billing-service": {
-    "recordedAt": "2026-07-13T08:19:01Z",
+    "recordedAt": "2026-07-13T08:19:46Z",
     "recordedBy": "tieulong",
     "provides": {
       "billing.get-invoice": "sha256:52d6bbe7d6ff757fafe3e680a880d3bb847a15af7512116a7fe9228f66c04fca",
