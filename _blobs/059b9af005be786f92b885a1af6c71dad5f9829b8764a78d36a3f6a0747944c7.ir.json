@@ -1,0 +1,72 @@
+{
+  "properties": {
+    "attributes": {
+      "additionalProperties": true,
+      "type": "object",
+      "x-ct-nullable": true
+    },
+    "coupon_code": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "customer_email": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "items": {
+      "items": {
+        "properties": {
+          "qty": {
+            "type": "integer",
+            "x-ct-scalar": "int32"
+          },
+          "sku": {
+            "type": "string",
+            "x-ct-scalar": "string"
+          },
+          "unitPrice": {
+            "type": "number",
+            "x-ct-scalar": "decimal"
+          }
+        },
+        "required": [
+          "qty",
+          "sku",
+          "unitPrice"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "note": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "BLOCKED",
+        "CLOSED"
+      ],
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "total_cents": {
+      "type": "integer",
+      "x-ct-scalar": "int64"
+    }
+  },
+  "required": [
+    "attributes",
+    "customer_email",
+    "items",
+    "order_id",
+    "status",
+    "total_cents"
+  ],
+  "type": "object"
+}

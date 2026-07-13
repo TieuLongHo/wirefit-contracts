@@ -1,0 +1,47 @@
+{
+  "properties": {
+    "customer_email": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "items": {
+      "items": {
+        "properties": {
+          "qty": {
+            "type": "number",
+            "x-ct-scalar": "float64"
+          },
+          "sku": {
+            "type": "string",
+            "x-ct-scalar": "string"
+          }
+        },
+        "required": [
+          "qty",
+          "sku"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "BLOCKED",
+        "CLOSED"
+      ],
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "customer_email",
+    "order_id",
+    "status"
+  ],
+  "type": "object"
+}

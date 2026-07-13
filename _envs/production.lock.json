@@ -1,0 +1,9 @@
+{
+  "order-service": {
+    "recordedAt": "2026-07-13T08:19:00Z",
+    "recordedBy": "tieulong",
+    "provides": {
+      "orders.get-order": "sha256:059b9af005be786f92b885a1af6c71dad5f9829b8764a78d36a3f6a0747944c7"
+    }
+  }
+}

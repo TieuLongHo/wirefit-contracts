@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "customer_email": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "uuid"
+    }
+  },
+  "required": [
+    "customer_email",
+    "order_id"
+  ],
+  "type": "object"
+}

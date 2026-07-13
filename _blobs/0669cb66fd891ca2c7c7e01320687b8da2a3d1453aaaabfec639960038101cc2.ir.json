@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "availableUnits": {
+      "type": "number",
+      "x-ct-scalar": "float64"
+    },
+    "backorderable": {
+      "type": "boolean",
+      "x-ct-scalar": "bool"
+    },
+    "sku": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "availableUnits",
+    "backorderable",
+    "sku"
+  ],
+  "type": "object"
+}
