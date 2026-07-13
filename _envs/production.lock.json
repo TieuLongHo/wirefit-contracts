@@ -29,7 +29,7 @@
     }
   },
   "notification-service": {
-    "recordedAt": "2026-07-13T08:19:14Z",
+    "recordedAt": "2026-07-13T08:19:58Z",
     "recordedBy": "tieulong",
     "consumes": {
       "billing-service/billing.invoice-created": "sha256:edd4b74d0e25db0a921839c0a60784c4aca6e4061a958b97faedd2fb52088b07"
