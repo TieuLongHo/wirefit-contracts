@@ -48,5 +48,12 @@
     "consumes": {
       "order-service/orders.get-order": "sha256:c1c7e3fb88d8cf48df05a9290a8728f54f3acbe401710abd3a56f15956572943"
     }
+  },
+  "web-app-zod": {
+    "recordedAt": "2026-07-13T08:19:12Z",
+    "recordedBy": "tieulong",
+    "consumes": {
+      "order-service/orders.get-order": "sha256:2b0b70f0c9039265f655d734be2808f8ca2f4a4d003785ab05d05cb993ca2689"
+    }
   }
 }
