@@ -7,6 +7,13 @@
       "billing.invoice-created": "sha256:cc5e97d64f4509b5f76ff9955e7cccc5dccabe2dc52faf183a4054b6c2bf7f53"
     }
   },
+  "inventory-service": {
+    "recordedAt": "2026-07-13T08:19:03Z",
+    "recordedBy": "tieulong",
+    "provides": {
+      "inventory.get-stock": "sha256:4f4289810d138db174f915a2be25731750a0f7789c19e584930ea2e63f128f27"
+    }
+  },
   "order-service": {
     "recordedAt": "2026-07-13T08:19:00Z",
     "recordedBy": "tieulong",
