@@ -1,0 +1,29 @@
+# Publish the wirefit deploy matrix as the GitHub Pages site of this repo.
+# Every publish/record-deploy pushed here re-renders the page.
+name: matrix pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+# publishes arrive as bursts of pushes; only the latest matters
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  matrix-pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: Wirefit/wirefit/actions/pages@master
+        with:
+          contracts-repo: TieuLongHo/wirefit-contracts
+          token: ${{ github.token }}
