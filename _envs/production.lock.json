@@ -71,7 +71,7 @@
     }
   },
   "web-store": {
-    "recordedAt": "2026-07-13T08:19:16Z",
+    "recordedAt": "2026-07-13T08:20:00Z",
     "recordedBy": "tieulong",
     "consumes": {
       "inventory-service/inventory.get-stock": "sha256:0669cb66fd891ca2c7c7e01320687b8da2a3d1453aaaabfec639960038101cc2"
