@@ -1,0 +1,8 @@
+{
+  "consumes/order-service/orders.get-order": [
+    "sha256:652db313dea5242254bc025063d273d9687752281692b79a8c77b3b496d1ecca"
+  ],
+  "provides/fulfillment.get-shipment": [
+    "sha256:4ac3ece7cce7cb552a988493bcd62d359f007e5a0936a1478db1f4bcf120f100"
+  ]
+}

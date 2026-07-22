@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "estimated_delivery_at": {
+      "type": "string",
+      "x-ct-scalar": "datetime"
+    },
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "tracking_number": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    }
+  },
+  "required": [
+    "estimated_delivery_at",
+    "order_id",
+    "tracking_number"
+  ],
+  "type": "object"
+}

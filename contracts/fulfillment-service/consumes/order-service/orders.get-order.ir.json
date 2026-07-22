@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "order_id": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "status": {
+      "type": "string",
+      "x-ct-scalar": "string"
+    },
+    "total_cents": {
+      "type": "integer",
+      "x-ct-scalar": "int64"
+    }
+  },
+  "required": [
+    "order_id",
+    "status",
+    "total_cents"
+  ],
+  "type": "object"
+}

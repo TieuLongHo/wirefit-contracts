@@ -1,9 +1,12 @@
 service: fulfillment-service
 schema-version: 1
+provides:
+  - id: fulfillment.get-shipment
+    kind: rest
+    direction: response
+    dto: ./internal/api#ShipmentView
 consumes:
-  - id: inventory.get-stock
-    provider: inventory-service
-    dto: com.acme.fulfillment.StockDecision
-extractors:
-  - match: "*"
-    command: "wirefit-java --classpath .wirefit-demo/fulfillment-service:.wirefit-demo/jakarta.annotation-api-3.0.0.jar"
+  # This projection states exactly which fields fulfilment reads from an order.
+  - id: orders.get-order
+    provider: order-service
+    dto: ./internal/orders#OrderView
