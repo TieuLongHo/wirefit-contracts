@@ -1,0 +1,5 @@
+{
+  "consumes/billing-service/billing.invoice-created": [
+    "sha256:cc5e97d64f4509b5f76ff9955e7cccc5dccabe2dc52faf183a4054b6c2bf7f53"
+  ]
+}
