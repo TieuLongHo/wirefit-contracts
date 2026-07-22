@@ -1,0 +1,5 @@
+{
+  "consumes/order-service/orders.get-order": [
+    "sha256:c1c7e3fb88d8cf48df05a9290a8728f54f3acbe401710abd3a56f15956572943"
+  ]
+}
