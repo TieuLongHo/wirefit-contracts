@@ -1,14 +1,5 @@
 {
   "properties": {
-    "attributes": {
-      "additionalProperties": true,
-      "type": "object",
-      "x-ct-nullable": true
-    },
-    "coupon_code": {
-      "type": "string",
-      "x-ct-scalar": "string"
-    },
     "customer_email": {
       "type": "string",
       "x-ct-scalar": "string"
@@ -38,10 +29,6 @@
       },
       "type": "array"
     },
-    "note": {
-      "type": "string",
-      "x-ct-scalar": "string"
-    },
     "order_id": {
       "type": "string",
       "x-ct-scalar": "uuid"
@@ -61,7 +48,6 @@
     }
   },
   "required": [
-    "attributes",
     "customer_email",
     "items",
     "order_id",
