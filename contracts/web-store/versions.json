@@ -1,0 +1,5 @@
+{
+  "consumes/inventory-service/inventory.get-stock": [
+    "sha256:0669cb66fd891ca2c7c7e01320687b8da2a3d1453aaaabfec639960038101cc2"
+  ]
+}
