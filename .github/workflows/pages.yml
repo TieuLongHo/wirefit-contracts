@@ -1,10 +1,10 @@
-# Publish the wirefit deploy matrix as the GitHub Pages site of this repo.
-# Every publish/record-deploy pushed here re-renders the page.
 name: matrix pages
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,6 @@ permissions:
   id-token: write
   contents: read
 
-# publishes arrive as bursts of pushes; only the latest matters
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -23,12 +22,18 @@ jobs:
     environment:
       name: github-pages
     steps:
-      # the action installs wirefit via `go install`; runners don't have GOPATH/bin
-      # on PATH, and the composite action doesn't add it (upstream TODO)
-      - run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
-      - uses: Wirefit/wirefit/actions/pages@master
+      - uses: actions/checkout@v4
+        with:
+          repository: Wirefit/wirefit
+          ref: a13ee3532102515a4dd6ed36b3bdef86f97f26aa
+          path: .wirefit/source
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: .wirefit/source/go.mod
+          cache-dependency-path: .wirefit/source/go.sum
+      - uses: Wirefit/wirefit/actions/pages@a13ee3532102515a4dd6ed36b3bdef86f97f26aa
         with:
           contracts-repo: TieuLongHo/wirefit-contracts
           token: ${{ github.token }}
-          # matrix --format html/-o is not in v0.2.0 yet; track master until released
-          version: master
+          version: a13ee3532102515a4dd6ed36b3bdef86f97f26aa
