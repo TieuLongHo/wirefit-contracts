@@ -14,55 +14,11 @@ concurrency:
   group: matrix-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  WIREFIT_REF: a13ee3532102515a4dd6ed36b3bdef86f97f26aa
-
 jobs:
   matrix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check out pinned WireFit source
-        uses: actions/checkout@v4
+      - uses: Wirefit/wirefit/actions/matrix@master
         with:
-          repository: Wirefit/wirefit
-          ref: ${{ env.WIREFIT_REF }}
-          path: .wirefit/source
-          persist-credentials: false
-      - uses: actions/setup-go@v5
-        with:
-          go-version-file: .wirefit/source/go.mod
-          cache-dependency-path: .wirefit/source/go.sum
-      - name: Install wirefit
-        working-directory: .wirefit/source
-        run: |
-          go install -ldflags "-X main.version=$WIREFIT_REF" ./cmd/wirefit
-          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
-      - name: Validate published manifests
-        shell: bash
-        run: |
-          wirefit version
-          shopt -s nullglob
-          for manifest in contracts/*/manifest.yaml; do
-            wirefit validate -f "$manifest"
-          done
-      - name: Render and gate the deployed matrix
-        shell: bash
-        run: |
-          mkdir -p .wirefit/reports
-          status=0
-          for format in md json html; do
-            rc=0
-            wirefit matrix --contracts-repo . --format "$format" \
-              -o ".wirefit/reports/matrix.$format" > /dev/null || rc=$?
-            if [ "$rc" -gt "$status" ]; then status="$rc"; fi
-            if [ "$rc" -gt 1 ]; then exit "$rc"; fi
-          done
-          cat .wirefit/reports/matrix.md
-          exit "$status"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: compatibility-matrix
-          path: .wirefit/reports/
-          include-hidden-files: true
+          version: master
